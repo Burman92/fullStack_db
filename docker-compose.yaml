@@ -1,50 +1,51 @@
 version: '3'
 
-# Each service runs in a separate container
+# Each service runs in a seperate container
 services:
-   # #the name of the service
-  express-service:
-
-    #shorthand name for the container
-    container_name: Believe_it
-
-    #build path to the Dockerfile
-    build: .
-
-    #create a bind mount so local changes show up in the container
-    #for development (lots of changes - restarting the container would be slow)
-    volumes: 
-      - ./:/app
-
-    #map the ports <outside container>:<inside container>
-    ports: 
-      - "8000:8000"
-
-    #make sure the postgres-db service starts first
-    depends_on:
-        - postgres-anime
-
-    #makes the value "prostgres-db" available in postgress.envDATABASE_HOST 
-    # in Node Server, so Pool connects to the container instead of localhost
-    environment:
-      DATABASE_HOST: "postgres-anime"
-
-    #Override the entrypoint in the Dockerfile
-    command: ["nodemon", "project.js"]
     # the name of the service
-    postgres-anime:
-        container_name: postgres-anime
+    express-service:
+        # shorthand name for the container
+        container_name: Believe_it
+        
+        # build path to the Dockerfile
+        build: .
+        
+        # create a bind mount so local changes show up in the container
+        # for development (lots of changes - restarting the container would be slow)
+        volumes:
+            - ./:/app:Z 
+        
+        # map the ports <outside container>:<inside container>
+        ports:
+            - "8100:8100"
+            
+        # make sure the postgres-db-anime service starts first
+        depends_on:
+            - postgres-db-anime
+        
+        # makes the value "postgres-db-anime" available in process.env.DATABASE_HOST in Node server, 
+        # so Pool connects to the container instead of localhost
+        environment:
+            DATABASE_HOST: postgres-db-anime
+
+        # Override the entrypoint in the Dockerfile
+        command: ["nodemon", "project.js"]
+
+    postgres-db-anime:
+        container_name: postgres-db-anime
         image: postgres:latest
         restart: always
         environment:
-            DATABASE_HOST: postgres-anime
+            DATABASE_HOST: postgres-db-anime
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: password
             POSTGRES_PORT: 5432
-            POSTGRES_DB: Naruto_Characters
+            POSTGRES_DB: NarutoCharacters
             PGDATA: /var/lib/postgresql/data
         ports:
             - "5432:5432"
+        volumes:
+            - pgdatasource:/var/lib/postgresql/data
 
 
     pgadmin:
@@ -59,9 +60,11 @@ services:
         volumes:
             - pgadmin-data:/var/lib/pgadmin
         depends_on:
-            - postgres-anime
-
+            - postgres-db-anime
         
 volumes:
   pgdatasource:
   pgadmin-data:
+
+networks:
+  default:

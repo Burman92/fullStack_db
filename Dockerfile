@@ -7,5 +7,5 @@ RUN npm install -g express
 RUN npm install
 
 COPY . . 
-EXPOSE 8000
+EXPOSE 8100
 CMD [ "nodemon", "project.js"]
