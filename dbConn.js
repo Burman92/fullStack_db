@@ -20,11 +20,25 @@ const dbConfig = {
 
 //if DATABASE_URL is set as an environmental variable (from Render), use that
 //otherwise, use the config object we defined above:
-const pool = DATABASE_URL ? new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-}) : new Pool(dbConfig);
+let pool = null;
+if(DATABASE_URL){
+    pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    })
+} else {
+    pool = new Pool(dbConfig);
+}
+
+
+
+// const pool = DATABASE_URL ? new Pool({
+//     connectionString: process.env.DATABASE_URL,
+//     ssl: {
+//         rejectUnauthorized: false
+//     }
+// }) : new Pool(dbConfig);
 
 module.exports = pool;

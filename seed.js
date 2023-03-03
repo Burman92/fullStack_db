@@ -3,7 +3,8 @@ const pool = require('./dbConn');
 
 
 /*--------------INSERT INTO villages TABLE---------------- */
-pool.query(`SELECT COUNT(*) FROM villages`,(error, data)=>{
+pool.query(`SELECT * FROM villages`,(error, data)=>{
+    console.log(data)
     if(data.rows[0]['count'] == 0){
         pool.query(`INSERT INTO villages (name) VALUES
         ('leaf'),
@@ -18,7 +19,7 @@ pool.query(`SELECT COUNT(*) FROM villages`,(error, data)=>{
     }
 })
 /*--------------INSERT INTO CHARACTERS TABLE---------------- */
-pool.query(`SELECT COUNT(*) FROM characters`,(error, data)=>{
+pool.query(`SELECT * FROM characters`,(error, data)=>{
     if(data.rows[0]['count'] == 0){
         pool.query(`INSERT INTO characters (name, village_id) VALUES
         ('Sasuke', 1),
