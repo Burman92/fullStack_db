@@ -15,12 +15,10 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
     }
     )
 /*-----------------CREATING A CHARACTER TABLE----------------- */
-pool.query(`CREATE TABLE IF NOT EXISTS characters (
+pool.query(`CREATE TABLE characters (
     id SERIAL PRIMARY KEY,
-    name text,
-    villages_id int NOT NULL
-    FOREIGN KEY(village_id) 
-    REFERENCES village.id)`, (error, data)=>{
+    name TEXT,
+    villages_id INTEGER NOT NULL FOREIGN KEY (village_id) REFERENCES village.id)`, (error, data)=>{
         if(error){
             console.log("CREATE TABLE characters failed");
         } else {
