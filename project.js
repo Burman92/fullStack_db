@@ -4,8 +4,8 @@ app.use(express.json());
 const port = 8100;
 const { Pool } = require('pg');
 const DB_HOST = process.env.DATABASE_HOST || "127.0.0.1";
-const cors = require('cors')
-app.use(cors())
+const cors = require('cors');
+app.use(cors());
 const pool = new Pool({
     user: 'postgres',
     host: DB_HOST,
