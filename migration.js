@@ -18,8 +18,9 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
 pool.query(`CREATE TABLE characters (
     id SERIAL PRIMARY KEY,
     name TEXT,
-    villages_id INTEGER FOREIGN KEY REFERENCES village(village.id))`, (error, data)=>{
+    CONSTRAINT village_id FOREIGN KEY (village.id) REFERENCES village (village.id));`, (error, data)=>{
         if(error){
+            console.log(error)
             console.log("CREATE TABLE characters failed");
         } else {
             console.log("characters table created")
