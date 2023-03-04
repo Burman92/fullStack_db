@@ -20,7 +20,7 @@ pool.query(`SELECT * FROM village`,(error, data)=>{
 /*--------------INSERT INTO CHARACTERS TABLE---------------- */
 pool.query(`SELECT * FROM characters`,(error, data)=>{
     console.log(data)
-    if(data.rows[0]['count'] == 0){
+    if(data.rows[0].length == 0){
         pool.query(`INSERT INTO characters (name, village_id) VALUES
         ("Sasuke", 1),
         ("Gaara", 2),
