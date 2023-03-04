@@ -35,6 +35,6 @@ pool.query(`SELECT * FROM characters`,(error, data)=>{
         })
     }
 })
-
+//the above code isn't working
 
 pool.end();
