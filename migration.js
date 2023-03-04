@@ -10,7 +10,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
         if(error){
             console.log("CREATE TABLE village failed");
         } else {
-            console.log(data)
+            console.log('village data: ', data)
             console.log("village table created")
         }
     }
@@ -26,6 +26,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS character (
             console.log(error)
             console.log("CREATE TABLE characters failed");
         } else {
+            console.log('characters data: ', data)
             console.log("characters table created")
         }
     }
