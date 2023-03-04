@@ -6,7 +6,7 @@ const pool = require('./dbConn');
 
 pool.query(`CREATE TABLE IF NOT EXISTS village (
     id SERIAL PRIMARY KEY,
-    name text)`, (error, data)=>{
+    name VARCHAR(100))`, (error, data)=>{
         if(error){
             console.log("CREATE TABLE village failed");
         } else {
@@ -19,8 +19,9 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
 
 pool.query(`CREATE TABLE IF NOT EXISTS character (
     id SERIAL PRIMARY KEY,
-    name text,
-    CONSTRAINT village_id FOREIGN KEY (village.id) REFERENCES village (village.id));`, (error, data)=>{
+    name VARCHAR (100),
+    village_id INT NOT NULL,
+    FOREIGN KEY (village_id) REFERENCES village(id) ON DELETE CASCADE)`, (error, data)=>{
         if(error){
             console.log(error)
             console.log("CREATE TABLE characters failed");
