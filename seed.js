@@ -22,10 +22,10 @@ pool.query(`SELECT * FROM characters`,(error, data)=>{
     console.log(data)
     if(data.rows[0]['count'] == 0){
         pool.query(`INSERT INTO characters (name, village_id) VALUES
-        ('Sasuke', 1),
-        ('Gaara', 2),
-        ('Sakura', 1),
-        ('Killer Bee', 1)`,
+        ("Sasuke", 1),
+        ("Gaara", 2),
+        ("Sakura", 1),
+        ("Killer Bee", 1)`,
         (error, data)=>{
             if(error){
                 console.log('Insert failed');
