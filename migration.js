@@ -1,11 +1,12 @@
 const { Pool } = require('pg');
 const DATABASE_URL = process.env.DATABASE_URL;
 const pool = require('./dbConn');
-pool.query(`DROP TABLE IF EXISTS characters`);
+
 /*----------------CREATING A VILLAGEs TABLE-------------------- */
+
 pool.query(`CREATE TABLE IF NOT EXISTS village (
     id SERIAL PRIMARY KEY,
-    name text)`, (error, data)=>{
+    name TEXT)`, (error, data)=>{
         if(error){
             console.log("CREATE TABLE village failed");
         } else {
@@ -15,7 +16,8 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
     }
     )
 /*-----------------CREATING A CHARACTER TABLE----------------- */
-pool.query(`CREATE TABLE characters (
+
+pool.query(`CREATE TABLE IF NOT EXISTS character (
     id SERIAL PRIMARY KEY,
     name TEXT,
     CONSTRAINT village_id FOREIGN KEY (village.id) REFERENCES village (village.id));`, (error, data)=>{
