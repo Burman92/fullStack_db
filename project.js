@@ -6,12 +6,15 @@ const { Pool } = require('pg');
 const DB_HOST = process.env.DATABASE_HOST || "127.0.0.1";
 const cors = require('cors');
 app.use(cors());
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: DB_HOST,
+//     database: 'NarutoCharacters',
+//     password: 'password',
+//     port: 5432
+// })
 const pool = new Pool({
-    user: 'postgres',
-    host: DB_HOST,
-    database: 'NarutoCharacters',
-    password: 'password',
-    port: 5432
+    connectionString: process.env.DATABASE_URL
 })
 /*-----------------All Get villages----------------- */
 app.get("/api/villages", (req, res, next)=>{
