@@ -1,6 +1,9 @@
 const { Pool } = require('pg');
 const DATABASE_URL = process.env.DATABASE_URL;
-const pool = require('./dbConn');
+// const pool = require('./dbConn');
+const pool = new Pool({
+    connectionString: 'postgres://shinobi_9ygt_user:LfahlwANLlkyQoV1kyi42Odfiu9fGaPF@dpg-cg2d2f82qv24hdkuutp0-a.oregon-postgres.render.com/shinobi_9ygt?ssl=true'
+})
 
 /*----------------CREATING A VILLAGEs TABLE-------------------- */
 
