@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const port = 8100;
+// const port = 8100;// for local
+const port = process.env.PORT
 const { Pool } = require('pg');
 const DB_HOST = process.env.DATABASE_HOST || "127.0.0.1";
 const cors = require('cors');
