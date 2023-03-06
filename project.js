@@ -32,7 +32,7 @@ app.get("/api/villages", (req, res, next)=>{
 /*-----------------All Get characters----------------- */
 app.get("/api/characters", (req, res, next)=>{
     // console.log('GET api/villages') 
-    pool.query('SELECT * FROM characters', (error, data)=>{
+    pool.query('SELECT * FROM character', (error, data)=>{
         if(error){
             return next(error);
         }
@@ -64,7 +64,7 @@ app.get("/api/villages/:id", (req, res, next)=>{
 app.get("/api/characters/:id", (req, res, next)=>{
     const id = parseInt(req.params.id);
 
-    pool.query('SELECT * FROM characters WHERE id = $1', [id], (error, data)=>{
+    pool.query('SELECT * FROM character WHERE id = $1', [id], (error, data)=>{
         if(!Number.isInteger(id)){
             res.status(404).send('No ninja found with that id')
         }

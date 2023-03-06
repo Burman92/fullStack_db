@@ -31,6 +31,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS character (
         } else {
             console.log('characters data: ', data)
             console.log("characters table created")
+            console.log(data.rows)
         }
     }
     )
