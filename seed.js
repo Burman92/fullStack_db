@@ -27,11 +27,12 @@ pool.query(`SELECT * FROM character`,(error, data)=>{
     // console.log(data)
     // .rows[0]['count'] 
     if(data.rows.length == 0){
-        pool.query(`INSERT INTO character (name, image, village_id) VALUES
-        ('Sasuke', pg_read_binary_file ('/sasuke.jpeg'), 1),
-        ('Gaara', pg_read_binary_file ('/sasuke.jpeg'), 2),
-        ('Sakura', pg_read_binary_file ('/sasuke.jpeg'), 1),
-        ('Killer Bee', pg_read_binary_file ('/sasuke.jpeg'), 1) RETURNING *`,
+        pool.query(`INSERT INTO character (name,main_attack, village_id) VALUES
+        ('Sasuke', 'Chidori', 1),
+        ('Gaara', 'Sand Coffin' , 2),
+        ('Naruto', 'Rasengan', 1),
+        ('Guy', 'Them Hands', 1),
+        ('Killer Bee', 'Lariat', 1) RETURNING *`,
         (error, data)=>{
             if(error){
                 console.log('Character Insert failed');

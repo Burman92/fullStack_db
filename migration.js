@@ -23,7 +23,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
 pool.query(`CREATE TABLE IF NOT EXISTS character (
     id SERIAL PRIMARY KEY,
     name VARCHAR (100),
-    image bytea,
+    main_attack text,
     village_id INT NOT NULL,
     FOREIGN KEY (village_id) REFERENCES village(id) ON DELETE CASCADE)`, (error, data)=>{
         if(error){
