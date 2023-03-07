@@ -46,6 +46,7 @@ services:
             - "5432:5432"
         volumes:
             - pgdatasource:/var/lib/postgresql/data
+            # - migration.js:/docker-entrypoint-initdb.d/migration.js
 
 
     pgadmin:
