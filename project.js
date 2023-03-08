@@ -116,6 +116,7 @@ app.post("/api/character",(req, res, next) => {
 app.patch("/api/character/:id",(req,res,next)=>{
     const id = Number.parseInt(req.params.id);
     const name = req.body.name;
+    const attack = req.body.main_attack;
     const village_id = Number.parseInt(req.body.village_id);
     pool.query("SELECT * FROM character WHERE id =$1", [id], (error, data)=>{
         if(error){
@@ -126,8 +127,9 @@ app.patch("/api/character/:id",(req,res,next)=>{
             res.status(404).send("'You are already in my genjutsu' -Itachi")
                 }
                 const updatedName = name || update.name;
+                const newAttack = attack || update.main_attack;
                 const updateVillage = village_id || update.village_id;
-    pool.query('UPDATE character SET name = $1, village_id = $2 WHERE id = $3', [updatedName, updateVillage, id], (error, information)=>{
+    pool.query('UPDATE character SET name = $1, village_id = $2, main_attack = $3 WHERE id = $4', [updatedName, updateVillage, newAttack, id], (error, information)=>{
         if(error){
             return res.status(404).send("'You are already in my genjutsu' -Itachi");
         }
