@@ -2,34 +2,34 @@ version: '3'
 
 # Each service runs in a seperate container
 services:
-    # the name of the service
-    express-service:
-        # shorthand name for the container
-        container_name: Believe_it
+#     # the name of the service
+#     express-service:
+#         # shorthand name for the container
+#         container_name: Believe_it
         
-        # build path to the Dockerfile
-        build: .
+#         # build path to the Dockerfile
+#         build: .
         
-        # create a bind mount so local changes show up in the container
-        # for development (lots of changes - restarting the container would be slow)
-        volumes:
-            - ./:/app:Z 
+#         # create a bind mount so local changes show up in the container
+#         # for development (lots of changes - restarting the container would be slow)
+#         volumes:
+#             - ./:/app:Z 
         
-        # map the ports <outside container>:<inside container>
-        ports:
-            - "8100:8100"
+#         # map the ports <outside container>:<inside container>
+#         ports:
+#             - "8100:8100"
             
-        # make sure the postgres-db-anime service starts first
-        depends_on:
-            - postgres-db-anime
+#         # make sure the postgres-db-anime service starts first
+#         depends_on:
+#             - postgres-db-anime
         
-        # makes the value "postgres-db-anime" available in process.env.DATABASE_HOST in Node server, 
-        # so Pool connects to the container instead of localhost
-        environment:
-            DATABASE_HOST: postgres-db-anime
+#         # makes the value "postgres-db-anime" available in process.env.DATABASE_HOST in Node server, 
+#         # so Pool connects to the container instead of localhost
+#         environment:
+#             DATABASE_HOST: postgres-db-anime
 
-        # Override the entrypoint in the Dockerfile
-        command: ["nodemon", "project.js"]
+#         # Override the entrypoint in the Dockerfile
+#         command: npm run migrate && npm run seed && npm start 
 
     postgres-db-anime:
         container_name: postgres-db-anime
@@ -69,3 +69,5 @@ volumes:
 
 networks:
   default:
+
+#   DATABASE_URL=postgres://shinobi_9ygt_user:LfahlwANLlkyQoV1kyi42Odfiu9fGaPF@dpg-cg2d2f82qv24hdkuutp0-a.oregon-postgres.render.com/shinobi_9ygt

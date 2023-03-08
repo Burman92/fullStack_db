@@ -18,6 +18,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS village (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100))`, (error, data)=>{
         if(error){
+            console.log(error);
             console.log("CREATE TABLE village failed");
         } else {
             // console.log('village data: ', data)

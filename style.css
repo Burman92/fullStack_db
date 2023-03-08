@@ -1,0 +1,136 @@
+body, html{
+    height: 100%;
+}
+body {
+    /* background-image: url("https://1.bp.blogspot.com/-n7onOTzXlt4/YBZ6M2LQOYI/AAAAAAABM0s/PY3ujliHwJQnIQaxtao9FMHkqWEN9ma7gCLcBGAsYHQ/s960/Naruto%2Blive%2Bwallpaper%2BPain.gif"); */
+    background-image: url("https://e0.pxfuel.com/wallpapers/122/357/desktop-wallpaper-pain-new-pain-naruto-inspiration-left-of-the-hudson-pain-black-and-white.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    height: 100%;
+}
+
+#header {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO5DN-ICwSjaOQgMQ7u8OJmHVUV52LjrwEkg&usqp=CAU");
+    background-blend-mode: multiply;
+    background-color: rgb(123, 0, 255);
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    text-align: center;
+    color: rgb(226, 43, 43);
+    opacity: 50%;
+    font-size: xx-large;
+    border: 3px solid rgb(8, 8, 8);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(44, 14, 240, 0.75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(44, 14, 240, 0.75);
+    box-shadow: 0px 0px 15px 5px rgba(44, 14, 240, 0.75);
+
+}
+
+
+
+/* #results{
+    background-color: brown;
+} */
+
+#results h2{
+    background-color: rgb(128, 4, 0);
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    text-align: center;
+    opacity: 60%;
+    display: none;
+    -webkit-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+-moz-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+
+}
+
+#inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#results #Last-seen{
+    background-color: rgb(128, 4, 0);
+    opacity: 60%;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    -webkit-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+-moz-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+}
+
+#results #Main-attack{
+    background-color: rgb(128, 4, 0);
+    opacity: 60%;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    -webkit-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+-moz-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+}
+
+#search {
+background-color: rgba(0, 0, 0, 0.249);
+height: 30px;
+width: 500px;
+margin: 0 auto;
+display: block;
+text-align: center;
+color: white;
+opacity: 60%;
+}
+
+#submit{
+    margin: 0 auto;
+    display: block;
+    opacity: 50%;
+    background-color: transparent;
+    color: beige;
+}
+
+#image-location{
+   margin: auto;
+   opacity: 60%;
+   -webkit-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+   -moz-box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);
+   box-shadow: 10px 11px 22px 0px rgba(245,242,245,0.6);  
+}
+
+ /* #pain{ */
+    /* color: orangered; */
+    /* overflow: hidden; Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  /* white-space: nowrap; Keeps the content on a single line */
+  /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+  /* letter-spacing: .15em; Adjust as needed */
+  /* animation:  */
+    /* typing 10s steps(40, end), */
+    /* blink-caret .75s step-end infinite; */
+/* } */ 
+/* @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  } */
+
+  /* @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  } */

@@ -5,23 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+    <title>Target look up</title>
 </head>
 <body>
+    
     <div id="main">
         <div id="header">
-            <h1>Target</h1>
+            <h1>Welcome to the Akatsuki</h1>
         </div>
         <div id="user-section">
-            <input id="search" type="text" name="search">
-            <button id="submit">Don't make me wait</button>
+            <input id="search" type="text" name="search" placeholder="Select your target from 36-47">
+            <button id="submit">
+                <h3>
+                    Click here to see your target. <br>Do not fail.
+                </h3>
+            </button>
+
         </div>
+       
         <div id="results">
-            <h3 class="Ninja name">name section</h3>
-        <img class="Target image">image section</ul>
-        <h2 class="Main attack">main attack section</h2>
+            <div id="inner">
+                <h2 class="child" id="Ninja-name"></h2>
+                <h3 class="child" id="Last-seen"></h3>
+                <h3 class="child" id="Main-attack"></h3>
+                <img id="image-location" src="" alt="">
+            </div>
         </div>
     </div>
+    <!-- <footer id="pain">
+        text section 
+    </footer> -->
+    <audio autoplay loop>
+        <!-- <source src="Akatsuki.mp3" type="audio/mpeg"> -->
+    </audio>
 </body>
 </html>
